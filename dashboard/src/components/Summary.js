@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Summary = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:3002/auth/me",
+          {
+            withCredentials: true,
+          }
+        );
+
+        setUser(response.data.user);
+      } catch (err) {
+        console.log("User fetch error:", err);
+      }
+    };
+
+    getUser();
+  }, []);
+
   return (
     <>
       <div className="username">
-        <h6>Hi, User!</h6>
+        <h6>Hi, {user?.name || "User"}!</h6>
         <hr className="divider" />
       </div>
 
@@ -18,17 +40,20 @@ const Summary = () => {
             <h3>3.74k</h3>
             <p>Margin available</p>
           </div>
+
           <hr />
 
           <div className="second">
             <p>
-              Margins used <span>0</span>{" "}
+              Margins used <span>0</span>
             </p>
+
             <p>
-              Opening balance <span>3.74k</span>{" "}
+              Opening balance <span>3.74k</span>
             </p>
           </div>
         </div>
+
         <hr className="divider" />
       </div>
 
@@ -40,21 +65,25 @@ const Summary = () => {
         <div className="data">
           <div className="first">
             <h3 className="profit">
-              1.55k <small>+5.20%</small>{" "}
+              1.55k <small>+5.20%</small>
             </h3>
+
             <p>P&L</p>
           </div>
+
           <hr />
 
           <div className="second">
             <p>
-              Current Value <span>31.43k</span>{" "}
+              Current Value <span>31.43k</span>
             </p>
+
             <p>
-              Investment <span>29.88k</span>{" "}
+              Investment <span>29.88k</span>
             </p>
           </div>
         </div>
+
         <hr className="divider" />
       </div>
     </>

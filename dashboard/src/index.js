@@ -1,15 +1,44 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./index.css";
-import Home from "./components/Home";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+import "./index.css";
+
+import Dashboard from "./components/Dashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Menu from "./components/Menu";
+
+const root = ReactDOM.createRoot(
+  document.getElementById("root")
+);
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/*" element={<Home />} />
+
+        <Route
+          path="/dashboard/*"
+          element={
+            <ProtectedRoute>
+              <div className="app-container">
+                <Menu />
+                <Dashboard />
+              </div>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="*"
+          element={<Navigate to="/dashboard" replace />}
+        />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
