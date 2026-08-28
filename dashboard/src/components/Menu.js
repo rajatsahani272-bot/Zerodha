@@ -12,7 +12,7 @@ const Menu = () => {
     const getUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3002/auth/me",
+          "https://zerodha-ezwn.onrender.com/auth/me",
           {
             withCredentials: true,
           }
@@ -47,7 +47,7 @@ const Menu = () => {
   const handleLogout = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3002/logout",
+        "https://zerodha-ezwn.onrender.com/logout",
         {},
         {
           withCredentials: true,

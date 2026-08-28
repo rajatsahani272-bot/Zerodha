@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children }) => {
     const checkAuth = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3002/auth/me",
+          "https://zerodha-ezwn.onrender.com/auth/me",
           {
             withCredentials: true,
           }
@@ -37,7 +37,7 @@ const ProtectedRoute = ({ children }) => {
   }
 
   if (!isAuthenticated) {
-    window.location.href = "http://localhost:3001/login";
+    window.location.href = "https://zerodha-ezwn.onrender.com/login";
     return null;
   }
 

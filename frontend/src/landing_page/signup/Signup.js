@@ -29,7 +29,7 @@ function Signup() {
         }
 
         const response = await axios.post(
-          "http://localhost:3002/login",
+          "https://zerodha-ezwn.onrender.com/login",
           {
             email: formData.email,
             password: formData.password,
@@ -41,7 +41,7 @@ function Signup() {
 
         console.log("Login successful:", response.data);
 
-        window.location.href = "http://localhost:3001/dashboard";
+        window.location.href = "https://zerodha-ezwn.onrender.com/dashboard";
 
         return;
       }
@@ -62,7 +62,7 @@ function Signup() {
       }
 
       const response = await axios.post(
-        "http://localhost:3002/signup",
+        "https://zerodha-ezwn.onrender.com/signup",
         {
           name: formData.name,
           email: formData.email,
