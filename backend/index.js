@@ -20,27 +20,28 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const app = express();
 
 const allowedOrigins = [
-  "http://localhost:3000",
-  "https://zerodha-dashboard-alpha-three.vercel.app",
-  "http://localhost:3001",
-  "https://zerodha-fontend.vercel.app",
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost:3002",
+    "https://zerodha-fontend.vercel.app",
+    "https://zerodha-dashboard-alpha-three.vercel.app",
 ];
-
-app.use(
-  cors({
-    origin: allowedOrigins,
-    credentials: true
-  })
-);
 
 app.use(
     cors({
         origin: function (origin, callback) {
-            if (!origin || allowedOrigins.includes(origin)) {
-                callback(null, true);
-            } else {
-                callback(new Error("Not allowed by CORS"));
+            if (!origin) {
+                return callback(null, true);
             }
+
+            if (
+                allowedOrigins.includes(origin) ||
+                origin.endsWith(".vercel.app")
+            ) {
+                return callback(null, true);
+            }
+
+            return callback(new Error("Not allowed by CORS"));
         },
         credentials: true,
     })
@@ -66,7 +67,6 @@ app.get("/allHoldings", async (req, res) => {
         res.status(200).json(allHoldings);
     } catch (err) {
         console.error("Error fetching holdings:", err);
-
         res.status(500).json({
             message: "Error fetching holdings",
             error: err.message,
@@ -77,11 +77,9 @@ app.get("/allHoldings", async (req, res) => {
 app.get("/allPositions", async (req, res) => {
     try {
         const allPositions = await PositionsModel.find({});
-
         res.status(200).json(allPositions);
     } catch (err) {
         console.error("Error fetching positions:", err);
-
         res.status(500).json({
             message: "Error fetching positions",
             error: err.message,
@@ -92,11 +90,9 @@ app.get("/allPositions", async (req, res) => {
 app.get("/allOrders", async (req, res) => {
     try {
         const allOrders = await OrdersModel.find({});
-
         res.status(200).json(allOrders);
     } catch (err) {
         console.error("Error fetching orders:", err);
-
         res.status(500).json({
             message: "Error fetching orders",
             error: err.message,
@@ -129,7 +125,6 @@ app.post("/newOrder", async (req, res) => {
         });
     } catch (err) {
         console.error("Error creating order:", err);
-
         res.status(500).json({
             message: "Error creating order",
             error: err.message,
@@ -172,7 +167,6 @@ app.post("/signup", async (req, res) => {
         });
     } catch (err) {
         console.error("Signup error:", err);
-
         res.status(500).json({
             message: "Signup failed",
         });
@@ -229,8 +223,8 @@ app.post("/login", async (req, res) => {
 
         res.cookie("token", token, {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax",
+            secure: true,
+            sameSite: "none",
             maxAge: 24 * 60 * 60 * 1000,
         });
 
@@ -244,7 +238,6 @@ app.post("/login", async (req, res) => {
         });
     } catch (err) {
         console.error("Login error:", err);
-
         res.status(500).json({
             message: "Login failed",
         });
@@ -289,7 +282,6 @@ app.get("/auth/me", async (req, res) => {
         });
     } catch (err) {
         console.error("Auth error:", err);
-
         res.status(401).json({
             message: "Invalid or expired token",
         });
@@ -299,8 +291,8 @@ app.get("/auth/me", async (req, res) => {
 app.post("/logout", (req, res) => {
     res.clearCookie("token", {
         httpOnly: true,
-        secure: false,
-        sameSite: "lax",
+        secure: true,
+        sameSite: "none",
     });
 
     res.status(200).json({
