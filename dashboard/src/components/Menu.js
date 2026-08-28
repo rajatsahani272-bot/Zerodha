@@ -7,7 +7,6 @@ const Menu = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [user, setUser] = useState(null);
 
-  // Get logged-in user
   useEffect(() => {
     const getUser = async () => {
       try {
@@ -19,7 +18,6 @@ const Menu = () => {
         );
 
         console.log("Logged in user:", response.data.user);
-
         setUser(response.data.user);
       } catch (err) {
         console.log(
@@ -32,18 +30,15 @@ const Menu = () => {
     getUser();
   }, []);
 
-  // Menu click
   const handleMenuClick = (index) => {
     setSelectedMenu(index);
     setIsProfileOpen(false);
   };
 
-  // Profile click
   const handleProfileClick = () => {
     setIsProfileOpen(!isProfileOpen);
   };
 
-  // Logout
   const handleLogout = async () => {
     try {
       const response = await axios.post(
@@ -58,8 +53,8 @@ const Menu = () => {
 
       setIsProfileOpen(false);
 
-      // Login application is running on port 3000
-      window.location.href = "http://localhost:3000/signup";
+      window.location.href =
+        "https://zerodha-fontend.vercel.app/signup";
     } catch (err) {
       console.log(
         "Logout error:",
@@ -71,10 +66,8 @@ const Menu = () => {
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
 
-  // Username
   const username = user?.name || "User";
 
-  // First two letters for avatar
   const avatar = username
     .substring(0, 2)
     .toUpperCase();
@@ -82,7 +75,6 @@ const Menu = () => {
   return (
     <div className="menu-container">
 
-      {/* Logo */}
       <img
         src="logo.png"
         alt="Zerodha"
@@ -91,10 +83,8 @@ const Menu = () => {
 
       <div className="menus">
 
-        {/* Main Menu */}
         <ul>
 
-          {/* Dashboard */}
           <li>
             <Link
               to="/dashboard"
@@ -113,7 +103,6 @@ const Menu = () => {
             </Link>
           </li>
 
-          {/* Orders */}
           <li>
             <Link
               to="/dashboard/orders"
@@ -132,7 +121,6 @@ const Menu = () => {
             </Link>
           </li>
 
-          {/* Holdings */}
           <li>
             <Link
               to="/dashboard/holdings"
@@ -151,7 +139,6 @@ const Menu = () => {
             </Link>
           </li>
 
-          {/* Positions */}
           <li>
             <Link
               to="/dashboard/positions"
@@ -170,7 +157,6 @@ const Menu = () => {
             </Link>
           </li>
 
-          {/* Funds */}
           <li>
             <Link
               to="/dashboard/funds"
@@ -189,7 +175,6 @@ const Menu = () => {
             </Link>
           </li>
 
-          {/* Apps */}
           <li>
             <Link
               to="/dashboard/apps"
@@ -212,7 +197,6 @@ const Menu = () => {
 
         <hr />
 
-        {/* Profile */}
         <div
           className="profile"
           onClick={handleProfileClick}
@@ -226,10 +210,8 @@ const Menu = () => {
           </p>
         </div>
 
-        {/* Profile Dropdown */}
         {isProfileOpen && (
           <div className="profile-menu">
-
             <ul>
 
               <li>
@@ -263,7 +245,6 @@ const Menu = () => {
               </li>
 
             </ul>
-
           </div>
         )}
 
