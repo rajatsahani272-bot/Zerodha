@@ -20,9 +20,18 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const app = express();
 
 const allowedOrigins = [
-    "http://localhost:3000",
-    "http://localhost:3001",
+  "http://localhost:3000",
+  "https://zerodha-dashboard-alpha-three.vercel.app",
+  "http://localhost:3001",
+  "https://zerodha-fontend.vercel.app",
 ];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true
+  })
+);
 
 app.use(
     cors({
