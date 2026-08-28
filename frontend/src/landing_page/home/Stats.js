@@ -20,7 +20,10 @@ function Stats() {
           <p className="text-muted mb-5">
             No gimmicks, spam, "gamification", or annoying push notifications.
             High quality apps that you use at your pace, the way you like.
-            <a href="#" className="text-primary text-decoration-none">
+            <a
+              href="/about"
+              className="text-primary text-decoration-none"
+            >
               {" "}Our philosophies.
             </a>
           </p>
@@ -35,11 +38,17 @@ function Stats() {
           <h4>Do better with money</h4>
           <p className="text-muted">
             With initiatives like{" "}
-            <a href="#" className="text-primary text-decoration-none">
+            <a
+              href="/nudge"
+              className="text-primary text-decoration-none"
+            >
               Nudge
             </a>{" "}
             and{" "}
-            <a href="#" className="text-primary text-decoration-none">
+            <a
+              href="/kill-switch"
+              className="text-primary text-decoration-none"
+            >
               Kill Switch
             </a>
             , we don't just facilitate transactions, but actively help you do
@@ -61,14 +70,14 @@ function Stats() {
 
           <div className="mt-4">
             <a
-              href="#"
+              href="/products"
               className="text-primary text-decoration-none me-5"
             >
               Explore our products →
             </a>
 
             <a
-              href="#"
+              href="/kite-demo"
               className="text-primary text-decoration-none"
             >
               Try Kite demo →

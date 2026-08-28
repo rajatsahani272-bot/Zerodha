@@ -22,18 +22,18 @@ function Footer() {
             </p>
 
             <div className="zerodha-footer-social">
-              <a href="#">𝕏</a>
-              <a href="#">f</a>
-              <a href="#">◎</a>
-              <a href="#">in</a>
+              <a href="https://twitter.com/zerodhaonline" target="_blank" rel="noreferrer">𝕏</a>
+              <a href="https://www.facebook.com/zerodhaonline" target="_blank" rel="noreferrer">f</a>
+              <a href="https://www.instagram.com/zerodhaonline/" target="_blank" rel="noreferrer">◎</a>
+              <a href="https://www.linkedin.com/company/zerodha/" target="_blank" rel="noreferrer">in</a>
             </div>
 
             <hr />
 
             <div className="zerodha-footer-social zerodha-footer-second-social">
-              <a href="#">▶</a>
-              <a href="#">◉</a>
-              <a href="#">➤</a>
+              <a href="https://www.youtube.com/c/zerodhaonline" target="_blank" rel="noreferrer">▶</a>
+              <a href="https://zerodha.com/z-connect/" target="_blank" rel="noreferrer">◉</a>
+              <a href="https://t.me/zerodhain" target="_blank" rel="noreferrer">➤</a>
             </div>
 
             <div className="zerodha-footer-apps">
@@ -45,53 +45,53 @@ function Footer() {
           <div className="zerodha-footer-column">
             <h5>Account</h5>
 
-            <a href="#">Open demat account</a>
-            <a href="#">Minor demat account</a>
-            <a href="#">NRI demat account</a>
-            <a href="#">HUF demat account</a>
-            <a href="#">Commodity</a>
-            <a href="#">Dematerialisation</a>
-            <a href="#">Fund transfer</a>
-            <a href="#">MTF</a>
+            <a href="/open-account">Open demat account</a>
+            <a href="/open-account">Minor demat account</a>
+            <a href="/open-account">NRI demat account</a>
+            <a href="/open-account">HUF demat account</a>
+            <a href="/commodities">Commodity</a>
+            <a href="/dematerialisation">Dematerialisation</a>
+            <a href="/fund-transfer">Fund transfer</a>
+            <a href="/mtf">MTF</a>
           </div>
 
           <div className="zerodha-footer-column">
             <h5>Support</h5>
 
-            <a href="#">Contact us</a>
-            <a href="#">Support portal</a>
-            <a href="#">How to file a complaint?</a>
-            <a href="#">Status of your complaints</a>
-            <a href="#">Bulletin</a>
-            <a href="#">Circular</a>
-            <a href="#">Z-Connect blog</a>
-            <a href="#">Downloads</a>
+            <a href="/contact">Contact us</a>
+            <a href="/support">Support portal</a>
+            <a href="/complaints">How to file a complaint?</a>
+            <a href="/complaints">Status of your complaints</a>
+            <a href="/bulletin">Bulletin</a>
+            <a href="/circulars">Circular</a>
+            <a href="/z-connect">Z-Connect blog</a>
+            <a href="/downloads">Downloads</a>
           </div>
 
           <div className="zerodha-footer-column">
             <h5>Company</h5>
 
-            <a href="#">About</a>
-            <a href="#">Philosophy</a>
-            <a href="#">Press & media</a>
-            <a href="#">Careers</a>
-            <a href="#">Zerodha Cares (CSR)</a>
-            <a href="#">Zerodha.tech</a>
-            <a href="#">Open source</a>
-            <a href="#">Referral program</a>
+            <a href="/about">About</a>
+            <a href="/about">Philosophy</a>
+            <a href="/press">Press & media</a>
+            <a href="/careers">Careers</a>
+            <a href="/csr">Zerodha Cares (CSR)</a>
+            <a href="/tech">Zerodha.tech</a>
+            <a href="/open-source">Open source</a>
+            <a href="/referral">Referral program</a>
           </div>
 
           <div className="zerodha-footer-column">
             <h5>Quick links</h5>
 
-            <a href="#">Upcoming IPOs</a>
-            <a href="#">Brokerage charges</a>
-            <a href="#">Market holidays</a>
-            <a href="#">Economic calendar</a>
-            <a href="#">Calculators</a>
-            <a href="#">Markets</a>
-            <a href="#">Sectors</a>
-            <a href="#">Gift Nifty</a>
+            <a href="/ipo">Upcoming IPOs</a>
+            <a href="/charges">Brokerage charges</a>
+            <a href="/market-holidays">Market holidays</a>
+            <a href="/calendar">Economic calendar</a>
+            <a href="/calculators">Calculators</a>
+            <a href="/markets">Markets</a>
+            <a href="/sectors">Sectors</a>
+            <a href="/gift-nifty">Gift Nifty</a>
           </div>
 
         </div>
@@ -112,16 +112,18 @@ function Footer() {
 
           <p>
             Procedure to file a complaint on{" "}
-            <a href="#">SEBI SCORES</a>: Register on SCORES portal.
-            Mandatory details for filing complaints on SCORES: Name, PAN,
-            Address, Mobile Number, E-mail ID. Benefits: Effective Communication,
-            Speedy redressal of the grievances
+            <a href="https://scores.sebi.gov.in/" target="_blank" rel="noreferrer">
+              SEBI SCORES
+            </a>
+            : Register on SCORES portal. Mandatory details for filing complaints
+            on SCORES: Name, PAN, Address, Mobile Number, E-mail ID. Benefits:
+            Effective Communication, Speedy redressal of the grievances
           </p>
 
           <p>
-            <a href="#">Smart Online Dispute Resolution</a>
+            <a href="/dispute-resolution">Smart Online Dispute Resolution</a>
             {" | "}
-            <a href="#">Grievances Redressal Mechanism</a>
+            <a href="/grievances">Grievances Redressal Mechanism</a>
           </p>
 
           <p>
@@ -141,7 +143,9 @@ function Footer() {
 
           <p>
             India's largest broker based on networth as per NSE.{" "}
-            <a href="#">NSE broker factsheet</a>
+            <a href="https://zerodha.com/brokerage/" target="_blank" rel="noreferrer">
+              NSE broker factsheet
+            </a>
           </p>
 
           <p>
@@ -165,7 +169,7 @@ function Footer() {
             As a business we don't give stock tips, and have not authorized
             anyone to trade on behalf of others. If you find anyone claiming
             to be part of Zerodha and offering such services, please{" "}
-            <a href="#">create a ticket here</a>.
+            <a href="/support">create a ticket here</a>.
           </p>
 
           <p>
@@ -187,17 +191,18 @@ function Footer() {
         </div>
 
         <div className="zerodha-footer-bottom">
-          <a href="#">NSE</a>
-          <a href="#">BSE</a>
-          <a href="#">MCX</a>
-          <a href="#">MSEI</a>
-          <a href="#">Terms & conditions</a>
-          <a href="#">Policies & procedures</a>
-          <a href="#">Privacy policy</a>
-          <a href="#">Disclosure</a>
-          <a href="#">For investor's attention</a>
-          <a href="#">Investor charter</a>
-          <a href="#">Sitemap</a>
+          <a href="https://www.nseindia.com/" target="_blank" rel="noreferrer">NSE</a>
+          <a href="https://www.bseindia.com/" target="_blank" rel="noreferrer">BSE</a>
+          <a href="https://www.mcxindia.com/" target="_blank" rel="noreferrer">MCX</a>
+          <a href="https://www.msei.in/" target="_blank" rel="noreferrer">MSEI</a>
+
+          <a href="/terms-and-conditions">Terms & conditions</a>
+          <a href="/policies">Policies & procedures</a>
+          <a href="/privacy-policy">Privacy policy</a>
+          <a href="/disclosure">Disclosure</a>
+          <a href="/investor-attention">For investor's attention</a>
+          <a href="/investor-charter">Investor charter</a>
+          <a href="/sitemap">Sitemap</a>
         </div>
 
       </div>

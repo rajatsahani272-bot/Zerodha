@@ -15,7 +15,7 @@ function Pricing() {
           </p>
 
           <a
-            href="#"
+            href="/pricing"
             className="text-primary text-decoration-none"
           >
             See pricing →
