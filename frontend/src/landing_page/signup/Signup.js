@@ -41,7 +41,7 @@ function Signup() {
 
         console.log("Login successful:", response.data);
 
-        window.location.href = "https://zerodha-ezwn.onrender.com/dashboard";
+        window.location.href = "https://zerodha-dashboard-alpha-three.vercel.app/dashboard";
 
         return;
       }
