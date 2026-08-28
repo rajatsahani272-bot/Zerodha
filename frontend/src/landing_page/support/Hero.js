@@ -7,7 +7,7 @@ function Hero() {
       <div className="container" id="supportWrapper">
         <div className="d-flex justify-content-between align-items-center">
           <h4>Support Portal</h4>
-          <a href="">Track Tickets</a>
+          <a href="/support">Track Tickets</a>
         </div>
       </div>
 
@@ -27,10 +27,21 @@ function Hero() {
             />
 
             <div className="support-links">
-              <a href="">Track account opening</a>
-              <a href="">Track segment activation</a>
-              <a href="">Intraday margins</a>
-              <a href="">Kite user manual</a>
+              <a href="/support/account-opening">
+                Track account opening
+              </a>
+
+              <a href="/support/segment-activation">
+                Track segment activation
+              </a>
+
+              <a href="/support/intraday-margins">
+                Intraday margins
+              </a>
+
+              <a href="/support/kite-user-manual">
+                Kite user manual
+              </a>
             </div>
           </div>
 
@@ -39,13 +50,13 @@ function Hero() {
 
             <ol>
               <li>
-                <a href="">
+                <a href="/support/takeovers-delisting">
                   Current Takeovers and Delisting - January 2024
                 </a>
               </li>
 
               <li>
-                <a href="">
+                <a href="/support/intraday-leverages">
                   Latest Intraday leverages - MIS & CO
                 </a>
               </li>
